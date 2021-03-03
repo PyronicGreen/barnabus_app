@@ -1,0 +1,103 @@
+:root {
+    font-size: 12px;
+    --color-violet: rgb(179, 66, 179);
+    --color-grey: rgb(238, 238, 238);
+    --color-grey-darker: rgb(84, 84, 84);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    width: calc(100% - 120px);
+    margin: auto;
+}
+
+header {
+    .logo {
+        transition: all .5s ease-out 60ms;
+        padding: 5px;
+    }
+    .logo:hover {  
+        background-color: var(--color-violet);
+        transform: rotate(360deg);
+      }
+    .container {
+        display: flex;
+        align-items: center;
+    }
+    .searchBar {
+        margin-left: auto;
+    }
+    .header-option {
+        padding-left: 4.5rem;
+    }
+    .currentDetails, .searchBar {
+        display: flex;
+    }
+}
+
+.options {
+    padding: 1.2rem 0;
+    .options-btn {
+        background: var(--color-grey);
+        padding: 0.6rem 1rem;
+        border-radius: 30px;
+        border: 0;
+        font-size: 1rem;
+        letter-spacing: 0.6px;
+        &.selected {
+            background: black;
+            color: white;
+        }
+    }
+}
+
+.listings {
+    .header {
+        display: flex;
+        align-items: center;
+        .header-title {
+            h2 {
+                font-weight: 400;
+                margin-bottom: 0.5rem;
+            }
+            span {
+                color: var(--color-grey-darker);
+            }
+        }
+        .header-viewOptions  {
+            margin-left: auto;
+            display: flex;
+            .viewAll {
+                color: var(--color-violet);
+                padding-right: 2rem;
+            }
+            .viewMore {
+                .arrow {
+                    width: 40px;
+                    height: 40px;
+                    background: red;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content:center;
+                    border-radius: 50%;
+                    background: var(--color-grey);
+                    opacity: 0.3;
+                    transition: all 0.2s ease-in-out;
+                    cursor: pointer;
+                    &.darker, &:hover {
+                        opacity: 1;
+
+                    }
+                }
+            }
+        }
+    }
+}

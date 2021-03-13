@@ -1,8 +1,13 @@
 :root {
     font-size: 12px;
-    --color-violet: rgb(179, 66, 179);
-    --color-grey: rgb(238, 238, 238);
-    --color-grey-darker: rgb(84, 84, 84);
+    --color-violet: rgb(192, 42, 185);
+    --color-grey: rgb(212, 221, 228);
+    --color-grey-darker: rgb(94, 98, 104);
+    --color-nightclub-blue: rgb(16, 32, 72);
+    --color-acid-lemon: rgb(235, 235, 115);
+    --color-trance-blue: rgb(65, 189, 219);
+    --color-electro-green: rgb(145, 201, 121);
+    --color-acid-lime: rgb(220, 226, 47);
 }
 
 * {
@@ -11,6 +16,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: sans-serif;
 }
 
@@ -25,7 +31,7 @@ header {
         padding: 5px;
     }
     .logo:hover {  
-        background-color: var(--color-violet);
+        background-color: var(--color-electro-green);
         transform: rotate(360deg);
       }
     .container {
@@ -43,11 +49,16 @@ header {
     }
 }
 
+#map {
+    margin: 13px;
+}
+
 .options {
-    padding: 1.2rem 0;
+    padding: 2rem 0;
+    display: flex;
     .options-btn {
         background: var(--color-grey);
-        padding: 0.6rem 1rem;
+        padding: .6rem 1rem;
         border-radius: 30px;
         border: 0;
         font-size: 1rem;
@@ -76,8 +87,13 @@ header {
             margin-left: auto;
             display: flex;
             .viewAll {
-                color: var(--color-violet);
+                transition: all .5s ease-out 60ms;
                 padding-right: 2rem;
+                font-weight: bold;
+            }
+            .viewAll:hover {
+                color: var(--color-electro-green);
+                }
             }
             .viewMore {
                 .arrow {
@@ -100,4 +116,3 @@ header {
             }
         }
     }
-}

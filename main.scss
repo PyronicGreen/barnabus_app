@@ -1,8 +1,14 @@
 :root {
     font-size: 12px;
-    --color-violet: rgb(179, 66, 179);
-    --color-grey: rgb(238, 238, 238);
-    --color-grey-darker: rgb(84, 84, 84);
+    --color-violet: #5a5fc4;
+    --color-grey: rgb(212, 221, 228);
+    --color-grey-darker: rgb(94, 98, 104);
+    --color-nightclub-blue: rgb(16, 32, 72);
+    --color-acid-lemon: rgb(235, 235, 115);
+    --color-trance-blue: rgb(65, 189, 219);
+    --color-electro-green: rgb(145, 201, 121);
+    --color-acid-lime: rgb(220, 226, 47);
+    --modal-duration: 1s;
 }
 
 * {
@@ -11,6 +17,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: sans-serif;
 }
 
@@ -20,46 +27,146 @@ body {
 }
 
 header {
+    background-color: var(--color-violet);
     .logo {
         transition: all .5s ease-out 60ms;
         padding: 5px;
     }
     .logo:hover {  
-        background-color: var(--color-violet);
-        transform: rotate(360deg);
+        background-color: var(--color-electro-green);
+        /*transform: rotate(360deg);*/
       }
     .container {
         display: flex;
         align-items: center;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 800px;
     }
     .searchBar {
         margin-left: auto;
     }
     .header-option {
-        padding-left: 4.5rem;
+        padding-left: 4.1rem;
     }
     .currentDetails, .searchBar {
         display: flex;
     }
 }
 
+button, input[type='submit'] {
+    background-color: var(--color-electro-green);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px  12px;
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+}
+
+.modal-container.show-modal {
+    display: block;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 400px;
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+    z-index: 1;
+}
+
+.modal-header {
+    background: var(--color-violet);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-form div {
+    margin: 15px 0;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+    padding: 8px;
+    width: 100%;
+}
+
+.close-btn {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#x {
+    height: 12px;
+    width: 12px;
+}
+
+#map {
+    margin: 13px;
+}
+
 .options {
-    padding: 1.2rem 0;
+    padding: 2rem 0;
+    display: flex;
     .options-btn {
         background: var(--color-grey);
-        padding: 0.6rem 1rem;
+        padding: .6rem 1rem;
         border-radius: 30px;
         border: 0;
         font-size: 1rem;
+        color: black;
         letter-spacing: 0.6px;
-        &.selected {
-            background: black;
-            color: white;
-        }
+        transition: all .2s ease-out 60ms;
+    }
+    .options-btn:hover {
+        background: black;
+        color: white;
     }
 }
 
-.listings {
+#where_to_input {
+    width: 250px;
+    border-radius: 5px;
+    
+}
+
+.search_bar_and_listings {
     .header {
         display: flex;
         align-items: center;
@@ -76,8 +183,13 @@ header {
             margin-left: auto;
             display: flex;
             .viewAll {
-                color: var(--color-violet);
+                transition: all .5s ease-out 60ms;
                 padding-right: 2rem;
+                font-weight: bold;
+            }
+            .viewAll:hover {
+                color: var(--color-electro-green);
+                }
             }
             .viewMore {
                 .arrow {
@@ -100,4 +212,13 @@ header {
             }
         }
     }
-}
+
+    @keyframes modalopen {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }

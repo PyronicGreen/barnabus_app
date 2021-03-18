@@ -3,6 +3,8 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "feather-icons": "^4.28.0"
+    "feather-icons": "^4.28.0",
+    "react-map-gl": "^6.1.10",
+    "styled-components": "^5.2.1"
   }
 }
